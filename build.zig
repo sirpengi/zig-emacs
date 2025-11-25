@@ -14,6 +14,7 @@ pub fn build(b: *std.Build) void {
     const exe = b.addLibrary(.{
         .linkage = .dynamic,
         .name = "zig-example",
+        .use_llvm = false,
         .root_module = b.createModule(.{
             .root_source_file = b.path("example.zig"),
             .target = target,
